@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="gui.SearchProgram">
+    <top>
+        <Label text="WordSearch" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.3, 0.6">
+            <items>
+                <!-- First column for 'Words' list -->
+                <ListView fx:id="wordsListView">
+                    <!-- Bind to your list data here -->
+                </ListView>
+
+                <!-- Second column for 'Words beginning with A' -->
+                <VBox>
+                    <ListView fx:id="wordsWithAListView">
+                        <!-- Bind to your list data here -->
+                    </ListView>
+                    <Button text="Read" />
+                </VBox>
+
+                <!-- Third column for 'Words beginning with N' -->
+                <VBox>
+                    <ListView fx:id="wordsWithNListView">
+                        <!-- Bind to your list data here -->
+                    </ListView>
+                    <Button text="Read" />
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <VBox>
+            <TextArea fx:id="historyTextArea" promptText="History">
+                <!-- This will be where the history is displayed -->
+            </TextArea>
+            <HBox>
+                <TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" />
+                <Button text="Search" />
+            </HBox>
+            <HBox>
+                <Label text="Total word count: " />
+                <Label fx:id="wordCountLabel" />
+                <Label text=" Search result: " />
+                <Label fx:id="searchResultLabel" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
